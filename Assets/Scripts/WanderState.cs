@@ -5,10 +5,8 @@ using UnityEngine;
 public class WanderState : IPet {
 
 	private readonly StatePet pet;
-	private int nextWanderPoint;
 
-
-
+	//constructor
 	public WanderState(StatePet statePet)
 	{
 		pet = statePet;
@@ -20,6 +18,7 @@ public class WanderState : IPet {
 	public void UpdateState()
 	{
 		Wander ();
+
 	}
 
 
@@ -32,7 +31,7 @@ public class WanderState : IPet {
 
 
 
-
+		
 	public void ToEating()
 	{
 		pet.currentState = pet.eatingState;
@@ -49,12 +48,18 @@ public class WanderState : IPet {
 
 	void Wander()
 	{
-		pet.navMeshAgent.destination = pet.wanderPoints [nextWanderPoint].position;
+
+		pet.navMeshAgent.destination = pet.wPoints;
 		pet.navMeshAgent.Resume ();
 
 		if (pet.navMeshAgent.remainingDistance <= pet.navMeshAgent.stoppingDistance && !pet.navMeshAgent.pathPending) {
-			nextWanderPoint = (nextWanderPoint + 1) % pet.wanderPoints.Length; // this allows for looping through the waypoints no matter the amount of waypoints.
+			
+			pet.controller = new WPointController (pet).NextWayPoint ();
+			Debug.Log("Target Reached");
+			Debug.Log (pet.controller);
+				
 		}
+
 	}
 
 

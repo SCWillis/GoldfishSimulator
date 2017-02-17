@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class StatePet : MonoBehaviour {
 
-
+	public Vector3 controller;
+	public Vector3 wPoints;
 
 	[HideInInspector] public IPet currentState;
 	[HideInInspector] public WanderState wanderState;
@@ -12,12 +13,13 @@ public class StatePet : MonoBehaviour {
 	[HideInInspector] public SleepState sleepState;
 	[HideInInspector] public UnityEngine.AI.NavMeshAgent navMeshAgent;
 
-	public Transform[] wanderPoints;
-
+	//public Transform[] wanderPoints;
 
 
 	void Awake(){
-		
+
+		controller = new WPointController(this).wayPoint;
+
 		wanderState = new WanderState (this);
 		eatingState = new EatingState (this);
 		sleepState = new SleepState (this);
@@ -26,19 +28,17 @@ public class StatePet : MonoBehaviour {
 	}
 
 
-
-
-
-
 	void Start () {
-		
+
 		currentState = wanderState;
+		wPoints = controller;
 	}
 	
 
 	void Update () {
-	
+
 		currentState.UpdateState ();
+		wPoints = controller;
 
 	}
 }
