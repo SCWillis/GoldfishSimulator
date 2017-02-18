@@ -46,12 +46,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\EatingState.cs" />
-     <Compile Include="Assets\Scripts\IPet.cs" />
-     <Compile Include="Assets\Scripts\SleepState.cs" />
-     <Compile Include="Assets\Scripts\StatePet.cs" />
-     <Compile Include="Assets\Scripts\WPointController.cs" />
-     <Compile Include="Assets\Scripts\WanderState.cs" />
+     <Compile Include="Assets\Scripts\Pet State\EatingState.cs" />
+     <Compile Include="Assets\Scripts\Pet State\IPet.cs" />
+     <Compile Include="Assets\Scripts\Pet State\SleepState.cs" />
+     <Compile Include="Assets\Scripts\Pet State\StatePet.cs" />
+     <Compile Include="Assets\Scripts\Pet State\WPointController.cs" />
+     <Compile Include="Assets\Scripts\Pet State\WanderState.cs" />
      <None Include="Assets\Wood texture floor_01\readme.txt" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />

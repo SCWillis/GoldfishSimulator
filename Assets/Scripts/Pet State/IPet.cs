@@ -13,4 +13,6 @@ public interface IPet
 
 	void ToSleeping();
 
+	void OnEnter (Collider other);
+
 }

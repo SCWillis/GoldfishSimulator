@@ -41,4 +41,9 @@ public class StatePet : MonoBehaviour {
 		wPoints = controller;
 
 	}
+
+	private void OnTriggerEnter(Collider other)
+	{
+		currentState.OnEnter (other);
+	}
 }

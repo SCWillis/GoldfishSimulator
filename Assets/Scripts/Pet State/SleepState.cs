@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EatingState : IPet {
+public class SleepState : IPet {
 
 	private readonly StatePet pet;
 
 
 
-	public EatingState(StatePet statePet)
+	public SleepState(StatePet statePet)
 	{
 		pet = statePet;
 	}
@@ -34,7 +34,7 @@ public class EatingState : IPet {
 
 	public void ToEating()
 	{
-		Debug.Log ("Already in Eating state");
+		pet.currentState = pet.eatingState;
 	}
 
 
@@ -42,7 +42,13 @@ public class EatingState : IPet {
 
 	public void ToSleeping()
 	{
-		pet.currentState = pet.sleepState;	
+		Debug.Log("Already in sleeping state");	
+	}
+
+
+	public void OnEnter (Collider other)
+	{
+		Debug.Log ("Collision");
 	}
 
 

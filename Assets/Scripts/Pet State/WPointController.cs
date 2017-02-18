@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Responsable for changing the target location for a pet instance.
 public class WPointController {
 
-	private readonly StatePet pet;
-	public Vector3 wayPoint = new Vector3(10f,1f,10f);
+	//private readonly StatePet pet;
+	public Vector3 wayPoint = new Vector3(Random.Range(0f,20f),1f,Random.Range(0f,20f));
 
 
 
 	public WPointController(StatePet statePet){
-		pet = statePet;
+		//pet = statePet;
 	}
 
 
