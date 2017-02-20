@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Pet State\DrinkState.cs" />
      <Compile Include="Assets\Scripts\Pet State\EatingState.cs" />
      <Compile Include="Assets\Scripts\Pet State\IPet.cs" />
      <Compile Include="Assets\Scripts\Pet State\SleepState.cs" />

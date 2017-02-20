@@ -11,6 +11,8 @@ public interface IPet
 
 	void ToEating();
 
+	void ToDrinking();
+
 	void ToSleeping();
 
 	void OnEnter (Collider other);
