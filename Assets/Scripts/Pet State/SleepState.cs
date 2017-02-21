@@ -5,7 +5,7 @@ using UnityEngine;
 public class SleepState : IPet {
 
 	private readonly StatePet pet;
-	private float sleepDistance = 0f;
+	private float sleepDistance = 2f;
 	private float sleepRate = 0.25f;
 
 

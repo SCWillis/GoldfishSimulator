@@ -6,6 +6,9 @@ public class StatePet : MonoBehaviour {
 
 	public Vector3 controller;
 	public Vector3 wPoints;
+	public GameObject gui;
+
+
 
 	//params for hunger
 	public float hunger = 100f;
@@ -33,6 +36,8 @@ public class StatePet : MonoBehaviour {
 	[HideInInspector] public DrinkState drinkState;
 	[HideInInspector] public UnityEngine.AI.NavMeshAgent navMeshAgent;
 
+
+
 	//public Transform[] wanderPoints;
 
 
@@ -45,6 +50,10 @@ public class StatePet : MonoBehaviour {
 		sleepState = new SleepState (this);
 
 		navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+
+		gui = GameObject.Find ("PetGUI");
+
+
 	}
 
 
@@ -52,6 +61,8 @@ public class StatePet : MonoBehaviour {
 
 		currentState = wanderState;
 		wPoints = controller;
+		gui.GetComponent<PlayerGUI> ().enabled = false;
+
 
 	}
 	
@@ -61,10 +72,26 @@ public class StatePet : MonoBehaviour {
 		currentState.UpdateState ();
 		wPoints = controller;
 
+
 	}
 
 	private void OnTriggerEnter(Collider other)
 	{
 		currentState.OnEnter (other);
 	}
+
+
+	void OnMouseOver()
+	{
+		gui.GetComponent<PlayerGUI> ().enabled = true;
+		gui.GetComponent<PlayerGUI> ().pet = this;
+	}
+
+	void OnMouseExit()
+	{
+		gui.GetComponent<PlayerGUI> ().enabled = false;
+	}
+
+
+
 }
