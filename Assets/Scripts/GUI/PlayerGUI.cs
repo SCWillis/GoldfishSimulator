@@ -12,39 +12,39 @@ public class PlayerGUI : MonoBehaviour {
 	public GUIStyle thirstStyle;
 	public GUIStyle sleepStyle;
 
+	public GameObject lettusBox;
 
 
 	void Start () {
-
-
+	
+		lettusBox = GameObject.Find("LettusBox");
+	
 	}
 	
 
 	void Update () {
 		
 	}
+		
 
 
 	void OnGUI()
 	{
-
-
-
 
 		//STRUCTURES THE STATS BOX
 		GUI.BeginGroup(new Rect(10,10,100,100));
 
 		//hunger
 		GUI.Box(new Rect(0, 0, 100, 20),"");
-		GUI.Box(new Rect(0, 0, pet.hunger, 20),"Hunger", hungerStyle);
+		GUI.Box(new Rect(0, 1, pet.hunger, 18),"Hunger", hungerStyle);
 
 		//thirst
 		GUI.Box(new Rect(0, 25, 100, 20),"");
-		GUI.Box(new Rect(0, 25, pet.thirst, 20),"thirst",thirstStyle);
+		GUI.Box(new Rect(0, 26, pet.thirst, 18),"thirst",thirstStyle);
 
 		//sleep
 		GUI.Box(new Rect(0, 50, 100, 20),"");
-		GUI.Box(new Rect(0, 50, pet.sleep, 20),"sleep",sleepStyle);
+		GUI.Box(new Rect(0, 51, pet.sleep, 18),"sleep",sleepStyle);
 
 		GUI.EndGroup();
 	}
